@@ -6,6 +6,7 @@ if (isset($_POST['delete'])) {
     $delete_id = mysqli_real_escape_string($connection, $_POST['delete_id']);
 
     $sql = "DELETE FROM meal_ideas WHERE id = $delete_id";
+    echo $delete_id;
 
     if (mysqli_query($connection, $sql)) {
         //on success
@@ -63,15 +64,15 @@ if (isset($_GET['id'])) {
 
                         <form action="details.php" method="POST" class="text-end">
                             <input type="hidden" name="delete_id" value="<?php echo $meal['id'] ?>">
-                            <input type="submit" value="Delete" name="Delete" class="btn btn-danger btn-lg">
+                            <input type="submit" value="Delete" name="delete" class="btn btn-danger btn-lg">
                         </form>
+
                     </div>
                 </div>
             </div>
 
         <?php else : ?>
             <?php header('Location: index.php'); ?>
-            <h5>There is no such recipe in the database!</h5>
         <?php endif; ?>
     </div>
 </div>
