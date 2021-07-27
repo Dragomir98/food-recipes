@@ -64,7 +64,7 @@ mysqli_close($connection);
         </div>
 
         <?php if (count($meals) < 1) : ?>
-            <p>there are no recipes</p>
+            <div class="mx-auto w-50 text-center h2 alert alert-danger">there are no recipes</div>
         <?php endif; ?>
 
         <?php include('templates/footer.php'); ?>
